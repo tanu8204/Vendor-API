@@ -44,3 +44,8 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// Add the mainClassName property inside the springBoot block
+springBoot {
+    mainClassName = 'com.SXN.Vendor.VendorApplication'
+}
