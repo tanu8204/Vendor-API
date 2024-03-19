@@ -36,9 +36,7 @@ dependencies {
 	implementation group: 'com.google.api-client', name: 'google-api-client', version: '2.2.0'
 
 	annotationProcessor 'org.projectlombok:lombok:1.18.24'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '3.2.2'
-	implementation 'com.google.cloud:google-cloud-firestore'
-	implementation 'com.google.auth:google-auth-library-oauth2-http'
+
 
 
 }
