@@ -47,5 +47,5 @@ tasks.named('test') {
 
 // Add the mainClassName property inside the springBoot block
 springBoot {
-    mainClassName = ''Vendor/build/classes/java/main/com/SXN/Vendor'
+    mainClassName = ''build/classes/java/main/com/SXN/Vendor'
 }
