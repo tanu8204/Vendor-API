@@ -5,10 +5,10 @@ FROM openjdk:17-alpine
 WORKDIR /app
 
 # Copy the compiled JAR file from the build stage to the container
-COPY build/libs/Vendor-0.0.1-SNAPSHOT.jar app.jar
+COPY Vendor-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the port that your application runs on
-EXPOSE 8080
+EXPOSE 8088
 
 # Command to run the application when the container starts
 CMD ["java", "-jar", "app.jar"]
