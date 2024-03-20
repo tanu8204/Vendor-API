@@ -29,10 +29,10 @@
 FROM openjdk:17-jdk-slim AS build
 
 # Copy the project files to the container
-COPY . /home/gradle/src
+COPY . .
 
 # Set the working directory
-WORKDIR /home/gradle/src
+WORKDIR /Vendor/build/classes/java/main/com/SXN/vENDOR/gradle/src
 
 # Run the Gradle build
 RUN ./gradlew build --no-daemon
@@ -47,7 +47,8 @@ EXPOSE 8082
 RUN mkdir /app
 
 # Copy the built JAR from the build stage to the runtime stage
-COPY --from=build /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar
+COPY --from=build /Vendor/build/classes/java/main/com/SXN/vENDOR/gradle/src
+/build/libs/*.jar /app/spring-boot-application.jar
 
 # Set the entry point to run the Spring Boot application
 ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/spring-boot-application.jar"]
