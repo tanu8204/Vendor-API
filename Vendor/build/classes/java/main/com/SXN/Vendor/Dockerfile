@@ -36,7 +36,7 @@ COPY . .
 WORKDIR /Vendor/build/classes/java/main/com/SXN/Vendor/gradle/src
 
 # Run the Gradle build
-RUN /Vendor/build/classes/java/main/com/SXN/Vendor/gradlew build --no-daemon
+RUN ./Vendor/build/classes/java/main/com/SXN/Vendor/gradlew build --no-daemon
 
 # Use JDK 17 slim image for the runtime environment
 FROM openjdk:17.0.1-jdk-slim
