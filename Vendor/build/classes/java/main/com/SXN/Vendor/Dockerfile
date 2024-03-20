@@ -4,25 +4,22 @@ FROM gradle:jdk17 as builder
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the project files
+# Copy the Gradle project files
 COPY . .
 
-# Run yarn install to install dependencies
-RUN yarn install --production --ignore-engines
-
-# Build the JAR file
+# Build the application
 RUN gradle build
 
 # Use a lightweight base image for the runtime environment
-FROM openjdk:17-alpine
+FROM openjdk:17-jdk-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
 
 # Copy the compiled JAR file from the build stage to the container
-COPY --from=builder /app/build/libs/vendor-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=builder /app/build/libs/*.jar app.jar
 
-# Expose the port that your application runs on
+# Expose the port that your application runs on (adjust if necessary)
 EXPOSE 8082
 
 # Command to run the application when the container starts
