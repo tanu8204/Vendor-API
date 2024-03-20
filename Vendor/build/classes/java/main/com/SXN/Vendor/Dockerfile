@@ -33,7 +33,7 @@ FROM openjdk:17-jdk-slim AS build
 COPY . .
 
 # Set the working directory
-WORKDIR /Vendor/build/classes/java/main/com/SXN/vENDOR/gradle/src
+WORKDIR /Vendor/build/classes/java/main/com/SXN/Vendor/gradle/src
 
 # Run the Gradle build
 RUN /Vendor/build/classes/java/main/com/SXN/Vendor/gradlew build --no-daemon
