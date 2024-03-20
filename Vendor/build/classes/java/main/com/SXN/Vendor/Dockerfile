@@ -28,7 +28,7 @@
 # Use JDK 17 instead of JDK 8
 # FROM openjdk:17-jdk-slim AS build
 # Use JDK 17 slim image for the runtime environment
-FROM adoptopenjdk:17-jre-hotspot AS build
+FROM openjdk:17- AS build
 
 # Copy the project files to the container
 COPY . .
@@ -40,10 +40,7 @@ WORKDIR /Vendor/build/classes/java/main/com/SXN/vENDOR/gradle/src
 RUN ./gradlew build --no-daemon
 
 # Use JDK 17 slim image for the runtime environment
-# FROM openjdk:17-jre-slim
-# Use JDK 17 slim image for the runtime environment
-FROM adoptopenjdk:17-jre-hotspot
-
+FROM openjdk:17.0.1-jdk-jre-slim
 
 # Expose port 8080
 EXPOSE 8082
