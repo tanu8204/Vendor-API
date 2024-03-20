@@ -53,3 +53,4 @@ COPY --from=build /Vendor/build/classes/java/main/com/SXN/Vendor/gradle/src/buil
 # Set the entry point to run the Spring Boot application
 ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/spring-boot-application.jar"]
 
+CMD ["/bin/bash"]
